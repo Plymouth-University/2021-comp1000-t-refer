@@ -55,7 +55,8 @@ namespace Tests
         {
             Setup();
             bool result = crawler.LoadMapFromFile("Simple.map");
-            Assert.False(crawler.GetOriginalMap().Equals(crawler.GetActiveMap()), "Map loading is not working: Original and Current Map should not use the same underlying object or shared data.");
+            Assert.True(result, "Map loading is not working: Simple map did load return true in LoadMapFromFile");
+           Assert.False(crawler.GetOriginalMap().Equals(crawler.GetActiveMap()), "Map loading is not working: Original and Current Map should not use the same underlying object or shared data.");
         }
 
         [Fact]
